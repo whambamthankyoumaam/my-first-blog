@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1b**#7cp%m)qrq-liako)*!mcwubvfz*_cngqw9(!3#ltvs)&_'
+SECRET_KEY = os.getenv('DJANGO_GIRLS_SECRET_KEY')
+#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,6 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+
+LOGIN_REDIRECT_URL = '/'
 
 
 # Database
